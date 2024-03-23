@@ -5,6 +5,9 @@ from django.views import generic
 
 
 class SignUpView(generic.CreateView):
+     """Класс на основе класса формы.
+    Сформирует: форму, перенаправит после регистрации на страницу с login,
+    Рендерит нужный шаблон"""
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
